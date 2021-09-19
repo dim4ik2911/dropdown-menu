@@ -22,29 +22,37 @@ header > * {
 
 .dropdown {
   position: relative;
-  background-color: #ffb7b7;
 }
 
-.dropdown-menu {
+#dropdown-menu {
   position: absolute;
   left: 0;
   top: calc(100% + 0.25rem);
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-20px);
   transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
   pointer-events: none;
+
+  display: none;
   /*so mouse does not see it*/
 }
-
-.dropdown-menu p {
+.link {
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+  color: #727272;
+}
+.link:hover,
+.link:focus {
+  color: black;
+}
+#dropdown-menu p {
   font-size: 2rem;
 }
 
-.dropdown > .link:focus + .dropdown-menu {
-  opacity: 1;
+.dropdown > .link:focus + #dropdown-menu {
   transform: translateY(0px);
   pointer-events: auto;
 }
